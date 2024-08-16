@@ -7,7 +7,13 @@
 def generate_greeting(name):
     if name == "":
         return "Hello Stranger!"
+    elif len(name) > 0 and type(name) == str:
+        return f"Hello {name}"
 
 def test_generate_greeting_should_handle_empty_string():
     result = generate_greeting("")
     assert(result) == "Hello Stranger!"
+    
+def test_generate_greeting_should_handle_string_with_text():
+    result = generate_greeting("name1")
+    assert(result)  == "Hello name1"
